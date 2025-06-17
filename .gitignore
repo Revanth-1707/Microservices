@@ -1,0 +1,13 @@
+# .gitignore
+
+*.sock
+*.swp
+*.log
+*.tmp
+target/
+build/
+
+
+# Exclude runtime MySQL data
+inventory-service/docker/mysql/data/
+order-service/mysql/

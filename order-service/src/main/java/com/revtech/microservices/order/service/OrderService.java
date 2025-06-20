@@ -23,12 +23,11 @@ public class OrderService {
 		var isProductInStock = inventoryClient.isInStock(orderRequest.skuCode(), orderRequest.quantity());
 		
 		if(isProductInStock) {
-			Order order = Order.builder()
-					.orderNumber(UUID.randomUUID().toString())
-					.skuCode(orderRequest.skuCode())
-					.quantity(orderRequest.quantity())
-					.price(orderRequest.price())
-					.build();
+			Order order = new Order();
+			order.setOrderNumber(UUID.randomUUID().toString());
+			order.setPrice(orderRequest.price());
+			order.setSkuCode(orderRequest.skuCode());
+			order.setQuantity(orderRequest.quantity());
 			orderRepository.save(order);
 		} else {
 			throw new RuntimeException("Product with SkuCode "+ orderRequest.skuCode()+" is not in stock");

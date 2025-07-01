@@ -46,7 +46,7 @@ public class ProductControllerIntegrationTest {
 		mongoDBContainer.start();
 		Product product = TestDataUtil.createTestProduct();
 		
-		ProductRequest productRequest = new ProductRequest(null, product.getName(), product.getDescription(), product.getPrice());
+		ProductRequest productRequest = new ProductRequest(null, product.getName(), product.getDescription(),product.getSkuCode(), product.getPrice());
 		String jsonProductRequest = objectMapper.writeValueAsString(productRequest);
 		
 		mockMvc.perform(

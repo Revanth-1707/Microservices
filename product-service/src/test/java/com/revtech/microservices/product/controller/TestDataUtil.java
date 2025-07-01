@@ -12,6 +12,7 @@ public class TestDataUtil {
 		return Product.builder()
 				.name("iphone16")
 				.description("SmartPhone")
+				.skuCode("iphone")
 				.price(new BigDecimal(1000))
 				.build();
 	}
